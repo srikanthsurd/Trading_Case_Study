@@ -1,0 +1,22 @@
+{
+  "synthetic_intraday_prices_500tickers_v2.csv": {
+    "bytes": 173271082,
+    "sha256": "7845c00ad3078b5805f597ba059414af6bf0dace43668f2057a75fec7b66e054"
+  },
+  "ticker_metadata_500tickers_v2.csv": {
+    "bytes": 25770,
+    "sha256": "539b72a80f19a9b3c79302cac2762656ed986c708895a85785f5624851f72e0d"
+  },
+  "index_constituents_500tickers_v2.csv": {
+    "bytes": 14349,
+    "sha256": "0fc8fac37eb0bce313dea97ad012343da54baf6bcdc22b713a1841c269534c64"
+  },
+  "scheduled_events_calendar_500tickers_v2.csv": {
+    "bytes": 1266,
+    "sha256": "4772a22d0056a7584fba5b346f8fb0c703cd1731132d01f12af3c45e7ff1504d"
+  },
+  "fee_schedule_500tickers_v2.csv": {
+    "bytes": 216,
+    "sha256": "2de4ca44b91ef3cd4b4a7de89ecc39aa534e67ec0c15fd4ea8ddb8b58d6b3c56"
+  }
+}

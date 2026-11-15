@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+# The supplied synthetic files are bundled in the handoff ZIP, but avoid committing large raw CSVs to GitHub.
+data/raw/*.csv
+outputs/*.csv
+outputs/*.png
+outputs/*.json
+outputs/*.pdf
+!outputs/README.md
