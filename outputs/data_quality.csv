@@ -1,0 +1,37 @@
+check,value
+raw_rows,978988
+raw_unique_tickers_including_index,501
+raw_equity_tickers,500
+raw_sessions,5
+raw_duplicate_timestamp_ticker_rows,3496
+duplicate_timestamp_ticker_groups,3491
+conflicting_duplicate_key_groups,62
+raw_crossed_quotes,1250
+raw_missing_cells,0
+raw_invalid_ohlc_rows,0
+raw_equity_one_minute_median_absolute_return_pct,62.685089463455526
+raw_equity_one_minute_p95_absolute_return_pct,593.4692719524894
+raw_equity_one_minute_p99_absolute_return_pct,1497.3840654896967
+raw_equity_one_minute_fraction_absolute_return_over_5pct,0.9362043152976862
+raw_equity_one_minute_fraction_absolute_return_over_20pct,0.8048880848570547
+raw_price_continuity_warning,True
+clean_rows_after_dedup_and_ohlc_filter,975492
+removed_duplicate_or_invalid_rows,3496
+clean_equity_tickers,500
+index_rows,1948
+sessions,"[""2025-11-10"", ""2025-11-11"", ""2025-11-12"", ""2025-11-13"", ""2025-11-14""]"
+metadata_tickers,500
+constituent_weight_sum,1.0
+event_count,16
+fee_components,5
+equity_one_minute_median_absolute_return_pct,0.07695421562205484
+equity_one_minute_p95_absolute_return_pct,0.3704572324954858
+equity_one_minute_p99_absolute_return_pct,0.6480970370598564
+equity_one_minute_fraction_absolute_return_over_5pct,2.059638904107332e-06
+equity_one_minute_fraction_absolute_return_over_20pct,2.059638904107332e-06
+price_continuity_warning,False
+price_path_assumption,compound_within_bar_open_to_close_returns
+price_path_note,"Raw one-minute price levels are independent redraws: OHLC inside each bar is tight, but the level jumps between minutes. Source files in data/raw/ are not modified. Each ticker-session, including INDEX, is rebuilt by anchoring at the first open and compounding the within-bar open-to-close return. High, low, bid, ask and adj_close are scaled with the open so relative ranges and quoted spreads stay unchanged. The quality gate is applied to this reconstructed path and still blocks the backtest if that path is implausible. Thresholds are not relaxed."
+backtest_blocked,False
+backtest_block_reasons,[]
+quality_gate_thresholds,"{""max_median_abs_1m_return_pct"": 2.0, ""max_fraction_abs_1m_return_over_20pct"": 0.01}"

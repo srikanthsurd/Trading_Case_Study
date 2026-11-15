@@ -3,9 +3,5 @@ __pycache__/
 .venv/
 .env
 # The supplied synthetic files are bundled in the handoff ZIP, but avoid committing large raw CSVs to GitHub.
+# The price file exceeds GitHub's 100 MB file limit.
 data/raw/*.csv
-outputs/*.csv
-outputs/*.png
-outputs/*.json
-outputs/*.pdf
-!outputs/README.md
