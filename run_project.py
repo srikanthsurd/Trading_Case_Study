@@ -26,4 +26,4 @@ subprocess.run(
     cwd=ROOT,
     check=True,
 )
-print("Research workflow adnd PDF report is placed in outputs/.")
+print("Research workflow and PDF report is placed in outputs/.")
