@@ -1,3 +1,3 @@
-European Intraday Strategy Lab
+Trading Case studySrikanth
 Version: 1.1.0-quality-gate
 Change: blocking one-minute price-continuity validation before strategy backtesting.
