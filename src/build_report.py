@@ -364,7 +364,7 @@ def write_docx(qrows, mrows, drows, rrows, erows, summary, price_vals, quality):
     normal.font.name = "Calibri"
     normal.font.size = Pt(11)
 
-    doc.add_heading("Trading Case studySrikanth", level=0)
+    doc.add_heading("Trading Case Study", level=0)
 
     doc.add_heading("Overall Summary", level=1)
     doc.add_paragraph(overall_intro())
@@ -483,7 +483,7 @@ def build_report(write_pdf=True, write_docx_file=True):
     styles.add(ParagraphStyle(name="CellBoldRight", parent=styles["CellRight"], fontName="Helvetica-Bold"))
 
     story = [
-        Paragraph("Trading Case studySrikanth", styles["Title"]),
+        Paragraph("Trading Case Study", styles["Title"]),
         Spacer(1, 4 * mm),
         Paragraph("Overall Summary", styles["Section"]),
     ]
