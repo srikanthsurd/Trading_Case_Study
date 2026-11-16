@@ -204,7 +204,7 @@ def performance_paragraphs(summary, price_vals, quality):
     return [
         (
             "Over the five days from 10 to 14 November 2025, all three strategies finish with a profit "
-            "under the assumptions in section 4. "
+            "under the assumptions in section 3. "
             f"Momentum makes {float(a['net_total_return_pct']):.2f}%. "
             f"Mean reversion makes {float(b['net_total_return_pct']):.2f}%. "
             f"The regime-switching hybrid makes {float(c['net_total_return_pct']):.2f}%. "
@@ -272,6 +272,30 @@ def assumption_groups():
                 "Stocks marked hard to borrow are not sold short. Lot size and the largest allowed trade size are applied.",
                 "No new trade starts within 15 minutes of a scheduled event, or within 30 minutes of the breaking-news window. The labels do not say whether the news was good or bad.",
             ],
+        ),
+    ]
+
+
+def backtest_paragraphs():
+    return [
+        (
+            "The backtest runs all three approaches on the same rebuilt prices, the same costs and the same five sessions, "
+            "10–14 November 2025. One-minute prices are turned into 15-minute bars. "
+            "A signal is taken from a finished bar, and the trade is assumed at the open of the next bar. "
+            "The result of that trade is measured from that open to the following open. Nothing is held overnight."
+        ),
+        (
+            "A stock stays in the book while its rank remains in the outer 20%, until 180 minutes have passed, or until the day ends. "
+            "A new stock is opened only when its rank newly enters the top or bottom 5%, it is among the tightest 20% of quotes, "
+            "and at least 30 earlier signals have, on average, made money after fees and the quote credit. "
+            "The book stays within 5% per stock, 100% long plus short, and 10% long minus short. "
+            "If the book loses 1% in a day, later trades that day are closed."
+        ),
+        (
+            "The test charges a commission of 0.8 bps, an exchange fee of 0.2 bps and a sell fee of 0.1 bps. "
+            "The book is assumed to earn half the gap between the bid and the ask on entry and on exit. "
+            "Long positions pay 80 bps a year. A short pays the borrow fee listed for that stock. "
+            "One bp is 0.01%."
         ),
     ]
 
@@ -389,7 +413,9 @@ def write_docx(qrows, mrows, drows, rrows, erows, summary, price_vals, quality):
         for item in items:
             doc.add_paragraph(item, style="List Bullet")
 
-    doc.add_heading("4. Results", level=1)
+    doc.add_heading("4. Backtesting and results", level=1)
+    for paragraph in backtest_paragraphs():
+        doc.add_paragraph(paragraph)
     add_docx_table(doc, mrows)
     doc.add_heading("Net return by day (%)", level=2)
     doc.add_paragraph(
@@ -552,7 +578,9 @@ def build_report(write_pdf=True, write_docx_file=True):
         ))
         story.append(Spacer(1, 2 * mm))
 
-    story.append(Paragraph("4. Results", styles["Section"]))
+    story.append(Paragraph("4. Backtesting and results", styles["Section"]))
+    for paragraph in backtest_paragraphs():
+        story.append(Paragraph(paragraph, styles["BodyClear"]))
     mrows = [["Measure", "A: Momentum", "B: Mean reversion", "C: Regime-switching hybrid"]]
     cols = [
         ("net_total_return_pct", "Net return over 5 days (%)"),
