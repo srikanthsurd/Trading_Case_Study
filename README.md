@@ -1,5 +1,5 @@
 
-# European Intraday Strategy Lab
+# Trading Case Study
 
 Reproducible research project comparing three intraday strategies on the supplied synthetic dataset:
 
